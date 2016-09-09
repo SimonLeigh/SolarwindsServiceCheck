@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# chkconfig: - 85 15
+. /etc/rc.d/init.d/functions
+
+prog="Solarwinds Services"
+service_names=("CouchWatcher" "ElasticsearchWatcher" "RabbitMqWatcher" "RestServices" "Babysitter")
+script_name=("CouchWatcher.py" "ElastcsearchWatcher.py" "RabbitMqWatcher.py" "RestServices.py" "Babysitter.py")
+script_path_prefix="/Services"
+RETVAL=0
+
+start() {
+	cd $script_path_prefix
+       	echo -n $"Starting $1: "
+	nohup /usr/bin/python $script_path_prefix/$1/$1.py &
+       	RETVAL=$?
+       	echo
+       	[ $RETVAL = 0 ] && echo -e "$1                     [\e[92mSTARTED\e[0m]" || echo -e "$1                        [\e[91mFAILED\e[0m]"
+        return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $1: "
+	kill -9 $(ps -ef | grep $1.py | grep -v grep | awk '{print$2}')
+	RETVAL=$?
+	echo
+	[ $RETVAL = 0 ] && echo -e "$1 Stop                     [\e[92mOK\e[0m]" || echo -e "$1 Stop                        [\e[91mFAILED\e[0m]"
+	sleep 1
+}
+
+case "$2" in
+  start)
+	start $1
+	;;
+  stop)
+	stop $1
+	;;
+  status)
+       	ps -ef | grep $1.py | grep -v grep 2>&1 > /dev/null
+	RETVAL=$?
+	if [ $RETVAL -eq 0 ];then
+		echo -e "$1			[\e[92mOK\e[0m]"
+	else
+		echo -e "$1                     [\e[91mWARN\e[0m]"
+	fi
+	;;
+  restart)
+	stop $1
+	start $1
+	;;
+  *)
+	echo "Usage: $prog <service_name> {start|stop|restart|status}"
+	echo "Usable service names : ${service_names[*]}"
+	RETVAL=2
+esac
+
+exit $RETVAL
