@@ -28,7 +28,7 @@ Script, config dosyasında belirtilen 1 veya daha fazla couchbase sistemine rest
 
 ### Toplanan Datalar
 
-+ Sunuculara ait datalar
+1. Sunuculara ait datalar
 ⋅⋅* Hostname (String)
 ++ Status (String)
 ++ Uptime (Integer)
