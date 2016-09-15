@@ -25,3 +25,24 @@ default_bucket = [bucket_name]
 ## CouchWatcher (Couchbase)
 
 Script, config dosyasında belirtilen 1 veya daha fazla couchbase sistemine rest servisi üzerinden bağlanarak istenilen dataları alır ve ilgili mysql tablosuna yazdırır.Config dosyasında ilgili alanda belirtilen tablo eğer yer almıyorsa kendisi bu tabloyu oluşturu ve kayıt işlemine devam eder.Hangi sunucu kümesi için işlem yaptığının ayırt edilebilmesi için log dosyasında parantez içinde config dosyasına yazdığınız alan ismi yazılır.
+
+### Toplanan Datalar
+
++ Sunuculara ait datalar
+++ Hostname (String)
+++ Status (String)
+++ Uptime (Integer)
+++ Cluster Membership (String)
+++ Memory Total (Integer)
+++ Memory Used (Integer)
+++ Swap Total (Integer)
+++ Swap Used (Integer)
+++ CPU Utilizations (Float)
+++ Cluster Count (Integer)
+++ Bucket Count (Integer)
+++ Bucket Stats (Dict)
++ Bucketlara ait datalar
+++ Item Count (Integer)
++ Clustera ait datalar
+++ Cluster HDD Stats (Dict)
+++ Cluster RAM Stats (Dict)
