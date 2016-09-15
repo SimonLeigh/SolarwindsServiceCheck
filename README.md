@@ -34,6 +34,10 @@ Scriptlerin içinde gerçekleşen olayları loglamak için yazılmış basit bir
 
 Scriptlerin ürettiği dataları, kritik bazı olayları ve uygulamalar arasında saklanması gereken herşeyi yazmak, okumak ve toplam kayıtlarını listelemek için basit bir kütüphanedir.İlgili tablolar arasındaki işlemler bu kütüphane sayesinde yapılır.Sıradaki versiyonda db kullanıcı adı, şifresi ve database ismi de config dosyasına taşınacaktır.
 
+## SendMail
+
+Scriptlerde meydana gelebilecek aksaklıklar ve önemli alarmlar için önceden yazılmış bir kütüphanedir.Arada bu tarz olayları kontrol edecek başka bir uygulama varsa (bizim konumuzda bu solarwinds olacak) bu kütüphaneye ihtiyacınız olmayabilir.Ancak ilerleyen versiyonlarda scriptlerin bilinmeyen çökme durumlarında ilgililere mail attırılıcağı için yinede konfigüre etmekte fayda var.Config dosyasında [mail] alanı ayarlanarak kütüphane kullanılabilir.Script, gmail sunucularına göre (ssl gerekliliği vs.) ayarlanmıştır.Eğer mail sunucu ayarlarınız bunlardan farklıysa script içinden değiştirmeniz gerekiyor.
+
 # Kontrol Edilen Uygulamalar ve Kontrol scriptleri
 
 ## CouchWatcher (Couchbase)
