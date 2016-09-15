@@ -30,6 +30,10 @@ Scriptlerin içinde gerçekleşen olayları loglamak için yazılmış basit bir
 ``` [Thu, 15 Sep 2016 19:27:19] [REST SERVICE] [ACCESS] [172.--.---.-- , sysroot , /sys/api/v0.1/dmall_rabbitmq/queuestats ,RESPONSE:200 OK
 ] ```
 
+## Db
+
+Scriptlerin ürettiği dataları, kritik bazı olayları ve uygulamalar arasında saklanması gereken herşeyi yazmak, okumak ve toplam kayıtlarını listelemek için basit bir kütüphanedir.İlgili tablolar arasındaki işlemler bu kütüphane sayesinde yapılır.Sıradaki versiyonda db kullanıcı adı, şifresi ve database ismi de config dosyasına taşınacaktır.
+
 # Kontrol Edilen Uygulamalar ve Kontrol scriptleri
 
 ## CouchWatcher (Couchbase)
