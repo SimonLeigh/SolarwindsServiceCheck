@@ -100,3 +100,35 @@ Bucket flushlamak için gerekli olan modül de yazılmış ve scripte eklenmişt
   + Disk Write (Integer)
   + Deliver Get (Float)
   + Publish Get (Float)
+
+## ElasticsearchWatcher (Elasticsearch with kopf plugin)
+
+### Toplanan Datalar
+
++ Sunuculara ait datalar
+  + Host Unique Name (Unique hash for each host/instance)
+  + Target Env (String)
+  + Hostname (String)
+  + Is Master (Bool)
+  + Uptime (Integer)
+  + Load Avg (Semicolon delimited float)
+  + Physical Memory Free Percent (Integer)
+  + Physical Memory Usage Percent (Integer)
+  + Swap Used (Float)
+  + Swap Free (Float)
+  + CPU Usage Percent (Integer)
+  + JVM Uptime (Integer)
+  + JVM Heap Max (Float)
+  + JVM Heap Usage Percent (Integer)
+  + JVM Thread Count (Integer)
+  + JVM Thread Peak Count (Integer)
++ Clustera ait datalar
+  + Number of Data Source (Integer)
+  + Number of Nodes (Integer)
+  + Cluster Status (String)
+  + Cluster Name (String)
++ Genel datalar
+  + Total Shards (Integer)
+  + Successful Shards (Integer)
+  + Docs Total (Integer)
+  + Docs Deleted (Integer)
