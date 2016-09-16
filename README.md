@@ -67,7 +67,7 @@ Bucket flushlamak için gerekli olan modül de yazılmış ve scripte eklenmişt
   + Cluster HDD Stats (Dict)
   + Cluster RAM Stats (Dict)
 
-## RabbitMqWatcher (RabbitMq)
+## RabbitMqWatcher (RabbitMQ)
 
 ### Toplanan Datalar
 
