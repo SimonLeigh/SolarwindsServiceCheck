@@ -132,3 +132,11 @@ Bucket flushlamak için gerekli olan modül de yazılmış ve scripte eklenmişt
   + Successful Shards (Integer)
   + Docs Total (Integer)
   + Docs Deleted (Integer)
+
+## GoogleAnalytics
+
+Bu modülü kullanabilmek için öncelikle "client_secrets.json" adındaki, api login bilgilerinizi içeren dosyayı google api yönetim konsolundan indirip, "/Service/GoogleAnalytics" klasörüne atmalı ve scripti bir defa elle tetikleyerek erişime izin vermelisiniz.Sonrasında script işlemleri kendisi halledecektir.
+
+### Toplanan Datalar
+
++ All Application Data Metric (All device and platform)
