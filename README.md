@@ -40,9 +40,9 @@ Scriptlerde meydana gelebilecek aksaklıklar ve önemli alarmlar için önceden 
 
 # Kontrol Edilen Uygulamalar ve Kontrol scriptleri
 
-## CouchWatcher (Couchbase)
+Scriptler, config dosyasında belirtilen 1 veya daha fazla couchbase sistemine rest servisi üzerinden bağlanarak istenilen dataları alır ve ilgili mysql tablosuna yazdırır.İhtiyaçlar doğrultusunda kullanım ve kontrol alanı daha da geliştirilebilecek olan bu  scriptler çok daha değişik kontrol metodlarını kullanabilirler.İlerleyen versiyonlarda çok daha değişik kontrol merodlarına yer vereceğiz.Eğer config dosyasında ilgili alanda belirtilen tablo yer almıyorsa kendisi bu tabloyu oluşturu ve kayıt işlemine devam eder.Hangi sunucu kümesi için işlem yaptığının ayırt edilebilmesi için log dosyasında parantez içinde config dosyasına yazdığınız alan ismi yazılır.
 
-Script, config dosyasında belirtilen 1 veya daha fazla couchbase sistemine rest servisi üzerinden bağlanarak istenilen dataları alır ve ilgili mysql tablosuna yazdırır.Config dosyasında ilgili alanda belirtilen tablo eğer yer almıyorsa kendisi bu tabloyu oluşturu ve kayıt işlemine devam eder.Hangi sunucu kümesi için işlem yaptığının ayırt edilebilmesi için log dosyasında parantez içinde config dosyasına yazdığınız alan ismi yazılır.
+## CouchWatcher (Couchbase)
 
 Bucket flushlamak için gerekli olan modül de yazılmış ve scripte eklenmiştir.İstenilmesi halinde aktif edilebilir.
 
@@ -66,3 +66,37 @@ Bucket flushlamak için gerekli olan modül de yazılmış ve scripte eklenmişt
 + Clustera ait datalar
   + Cluster HDD Stats (Dict)
   + Cluster RAM Stats (Dict)
+
+## RabbitMqWatcher (RabbitMq)
+
+### Toplanan Datalar
+
++ Sunuculara ait datalar
+  + Address (String)
+  + Status (String)
+  + Cluster Membership (String)
+  + Running (Bool)
+  + Uptime (Integer)
+  + Disk Free (Integer)
+  + Disk Free Alarm (Integer)
+  + Disk Free Limit (Integer)
+  + Memory Used (Integer)
+  + Memory Alarm (Integer)
+  + Memory Limit (Integer)
+  + File Descriptor Total (Integer)
+  + File Descriptor Used (Integer)
+  + Socket Total (Integer)
+  + Socket Used (Integer)
++ Queuelara ait datalar
+  + Name (String)
+  + Status (String)
+  + State (String)
+  + Consumers (Integer)
+  + Sync Slave Nodes (Comma delimited string)
+  + Msg Unacked (Integer)
+  + Msg Ready (Integer)
+  + Master Node (String)
+  + Disk Reads (Integer)
+  + Disk Write (Integer)
+  + Deliver Get (Float)
+  + Publish Get (Float)
