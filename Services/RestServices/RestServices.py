@@ -100,7 +100,7 @@ def dmall_elastic_statics():
 	except ValueError:
 		abort(500)
 
-@app.route('/sys/api/v0.1/analytics_n11/totalvisitors',methods=['GET'])
+@app.route('/sys/api/v0.1/analytics/totalvisitors',methods=['GET'])
 @auth.login_required
 def analytics_n11_totalvisitors():
 	stats = an.ActiveUser()
@@ -110,7 +110,7 @@ def analytics_n11_totalvisitors():
 		abort(500)
 
 
-@app.route('/sys/api/v0.1/analytics_n11/totalvisitorsperapp',methods=['GET'])
+@app.route('/sys/api/v0.1/analytics/totalvisitorsperapp',methods=['GET'])
 @auth.login_required
 def analytics_n11_totalvisitorsperapp():
 	stats = an.ActiveUserPerApp()
